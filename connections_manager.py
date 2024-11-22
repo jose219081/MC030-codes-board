@@ -2,8 +2,8 @@ import network
 import time
 
 def connect_to_wifi():
-    REDE = "Guardachuva_2G"
-    SENHA = "@Quinta06Feira#"
+    REDE = ""
+    SENHA = ""
 
     ### Conexão wi-fi, com rede e senha pré-definidos
     GLOB_WLAN = network.WLAN(network.STA_IF)
