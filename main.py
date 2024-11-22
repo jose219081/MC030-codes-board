@@ -7,7 +7,7 @@ import random
 
 GLOB_WLAN = network.WLAN(network.STA_IF)
 GLOB_WLAN.active(True)
-GLOB_WLAN.connect("Guardachuva_2G", "@Quinta06Feira#")
+GLOB_WLAN.connect("", "")
 #GLOB_WLAN.connect("Sala_2.4G", "522FBDB710")
 
 count = 0
@@ -28,9 +28,9 @@ while 1:
     segundo = ('00' + gmtime[5])[-2:]
     timestamp = f"{dia}_{mes}_{ano}-{hora}_{minuto}_{segundo}"
     print("Timestamp:", timestamp)
-    #sensor_manager = senman.SensorsManager()
+    sensor_manager = senman.SensorsManager()
     weather_data = weather.get_weather_data()
-    sensor_data = {"temperatura": random.uniform(20.00,36.00), "umidade": random.uniform(60.00,64.00), "som": 2, "pressao": random.uniform(930.00,940.00)}
+    sensor_data = sensor_manager.sensors_reading(timestamp, gmtime)
     dados = None
     dados = {"sensor": sensor_data, "openweathermap": weather_data}
     dados = {timestamp: dados}
