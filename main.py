@@ -18,7 +18,7 @@ while not GLOB_WLAN.isconnected():
     pass
 
 while 1:
-    time.sleep(5)
+    time.sleep(900)
     gmtime = list(map(str, time.gmtime()))
     dia = ('00' + gmtime[2])[-2:]
     mes = ('00' + gmtime[1])[-2:]
